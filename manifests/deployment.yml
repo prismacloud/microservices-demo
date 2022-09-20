@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: prismacloudmicroservicesdemo 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: prismacloudmicroservicesdemo
+  template:
+    metadata:
+      labels:
+        app: prismacloudmicroservicesdemo 
+    spec:
+      containers:
+        - name: prismacloudmicroservicesdemo 
+          image: myazurecontainerregistries.azurecr.io/prismacloudmicroservicesdemo
+          ports:
+          - containerPort: 80
